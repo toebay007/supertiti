@@ -1,0 +1,92 @@
+.firstNav{
+    background-color: black;
+    color: white;
+}
+.mainPic{
+    border: 1px sold red;
+    min-height: 600px;
+    background-color: rgb(132, 132, 168);
+    margin-bottom: 60px;
+}
+.quick{
+    border: 1px solid red;
+    min-height: 300px;
+}
+.qAbout{
+    border: 1px solid blue;
+    margin-bottom: 60px;
+    min-height: 250px;
+}
+.addAbout{
+    border: 1px solid red;
+    min-height: 200px;
+}
+.addAbouts{
+    border: 1px solid red;
+    min-height: 200px;
+    margin-bottom: 60px;
+}
+.regs{
+    border: 1px solid red;
+    min-height: 400px;
+    margin-bottom: 60px;
+}
+.vids{
+    border: 1px solid red;
+    margin-bottom: 60px;
+    min-height: 500px;
+    background-color: rgb(165, 165, 206);
+}
+.testi{
+    border: 1px solid red;
+    min-height: 100px;
+    margin-bottom: 60px;
+}
+.breadcrumbs{
+    margin-bottom: 40px;
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+.abtH{
+    border: 1px solid red;
+    margin-bottom: 60px;
+    margin-top: 60px;
+}
+.abtHe{
+    border-bottom: 2px solid #000;
+}
+.abt{
+    border: 1px solid red;
+    margin-bottom: 60px;
+    margin-top: 60px;
+    min-height: 500px;
+}
+.blogged{
+    border: 1px solid red;
+    min-height: 200px;
+    margin-bottom: 40px;
+}
+.memb{
+    border: 1px solid red;
+    min-height: 300px;
+    margin-bottom: 60px;
+}
+.products{
+    min-height: 500px;
+}
+.prods{
+    border: 1px solid red;
+    min-height: 100px;
+}
+
+
+
+
+
+/* footer */
+.foot{
+    border: 1px solid red;
+    margin-top: 40px;
+    min-height: 100px;
+}
