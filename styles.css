@@ -1,46 +1,99 @@
+h1, h2, h3, h4, h5, h6, p, span, small, nav, ol{
+    font-family: 'Quicksand', sans-serif;
+}
 .firstNav{
     background-color: black;
     color: white;
 }
 .mainPic{
-    border: 1px sold red;
     min-height: 600px;
-    background-color: rgb(132, 132, 168);
+    background-image: url("img/5Fruit.jpeg");
+    background-size: cover;
+    background-attachment: fixed;
     margin-bottom: 60px;
+}
+.mainpics{
+    min-height: 600px;
+    min-width: 100%;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.6;
+}
+.maintext{
+    z-index: 100;
+    color: white;
+    font-size: 5rem;
+    font-weight: 900;
+    margin-top: 30px;
+}
+.btnss{
+    border: none;
+    outline: none;
+    text-decoration: none;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(31, 31, 48);
+    z-index: 500;
+    min-height: 50px;
+    padding: 10px;
+    font-size: 2.5rem;
+    font-weight: 600;
+    min-width: 100px;
+    margin-top: 60px;
+}
+.btnss:hover{
+    background-color: rgb(39, 39, 187);
+}
+.btnss:focus{
+    background-color: rgb(11, 11, 78);
 }
 .quick{
     border: 1px solid red;
-    min-height: 300px;
+    min-height: 20px;
+    margin-bottom: 20px;
 }
 .qAbout{
-    border: 1px solid blue;
     margin-bottom: 60px;
     min-height: 250px;
 }
 .addAbout{
-    border: 1px solid red;
-    min-height: 200px;
+    min-height: 10px;
 }
 .addAbouts{
-    border: 1px solid red;
-    min-height: 200px;
+    min-height: 10px;
     margin-bottom: 60px;
+}
+.h3{
+    min-width:100%;
+    min-height: 200px;
+    border: 1px solid rgb(155, 154, 154);
+    border-radius: 5px;
+}
+.iconss{
+    margin-top: 30px;
 }
 .regs{
-    border: 1px solid red;
-    min-height: 400px;
-    margin-bottom: 60px;
+    min-height: 300px;
+    margin-bottom: 20px;
+}
+.regs .imgs{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 5px 5px grey;
+    border-radius: 5px;
 }
 .vids{
-    border: 1px solid red;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
     min-height: 500px;
-    background-color: rgb(165, 165, 206);
 }
 .testi{
-    border: 1px solid red;
     min-height: 100px;
-    margin-bottom: 60px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.testImg{
+    border-radius: 50%;
+
 }
 .breadcrumbs{
     margin-bottom: 40px;
@@ -49,36 +102,178 @@
     border: none;
 }
 .abtH{
-    border: 1px solid red;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
     margin-top: 60px;
-}
-.abtHe{
-    border-bottom: 2px solid #000;
 }
 .abt{
-    border: 1px solid red;
-    margin-bottom: 60px;
-    margin-top: 60px;
-    min-height: 500px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    min-height: 10px;
+    font-size: 1rem;
 }
 .blogged{
-    border: 1px solid red;
     min-height: 200px;
     margin-bottom: 40px;
 }
+.blogged:hover{
+    transform: scale(1.1);
+    box-shadow: 1px 2px 2px gray;
+    z-index: 20;
+    border-radius: 10px;
+}
 .memb{
-    border: 1px solid red;
-    min-height: 300px;
-    margin-bottom: 60px;
+    min-height: 10px;
+    margin-bottom: 20px;
 }
 .products{
     min-height: 500px;
 }
 .prods{
-    border: 1px solid red;
-    min-height: 100px;
+    min-height: 10px;
 }
+img{
+    box-shadow: 0px 3px 3px grey;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.img{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.button{
+    border: none;
+    outline: none;
+    text-decoration: none;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(31, 31, 48);
+    min-height: 50px;
+    padding: 10px;
+    font-size: 1.5rem;
+    min-width: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.button:hover{
+    background-color: rgb(39, 39, 187);
+}
+.button:focus{
+    background-color: rgb(11, 11, 78);
+}
+ /* Product snippet design */
+
+
+ .proImg{
+    margin-top: 10px;
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    box-shadow:0px 5px 10px rgb(196, 187, 186);
+}
+.proImg{
+    transition: all 1.0s ease;
+}
+.proImg{
+    overflow: hidden;
+}
+.proImg:hover{
+    transform: scale(1.2);
+}
+.pros{
+    text-align: center;
+    margin-top: 10px;
+}
+.prodbtnn{
+    border: none;
+    outline: none;
+    text-decoration: none;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(31, 31, 48);
+    font-size: 1.2rem;
+    min-width: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.prodbtnn:hover{
+    background-color: rgb(36, 36, 133);
+}
+.prodbtnn:focus{
+    background-color: rgb(62, 62, 202);
+}
+.cartsAdd{
+    background-color: black;
+    color:white;  
+    box-shadow: 0px 5px 10px #212121;  
+    margin-top:20px; 
+    margin-bottom: 20px;
+}
+.cartsAdd:hover{
+    box-shadow: 0px 5px 10px rgb(102, 126, 207);
+    border: none;
+    color: black;
+}
+.cartsAdd:focus{
+    box-shadow: 0px 10px 10px #1b2e61;
+    color: white;
+    border: none;
+    background-color: rgb(46, 46, 71);
+}
+ /* end of product design */
+
+
+
+
+
+
+/* ADMIN PAGE CSS */
+
+.adDivs{
+    min-height: 100px;
+    margin-bottom: 20px;
+}
+.advivs{
+    background-color: rgb(41,48,66);
+}
+.admdivs{
+    min-height: 30px;
+    color: white;
+}
+.admDivs{
+    min-height: 100px;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0px 5px 5px 5px rgb(167, 164, 164);
+}
+.adminA{
+    outline: none;
+    text-decoration: none;
+    border: none;
+    color: white;
+}
+.adminbtn{
+    color: rgb(163, 176, 189);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    min-height: 2rem;
+    background-color:rgb(41,48,66);
+    border-radius: 5px;
+    outline: none;
+    text-decoration: none;
+    border: none;
+}
+.adminbtn:hover{
+    color: white;
+}
+
+
+
+
+/* END OF ADMIN PAGE CSS */
+
+
 
 
 
@@ -86,7 +281,13 @@
 
 /* footer */
 .foot{
-    border: 1px solid red;
+    background-color: rgb(7, 7, 7);
     margin-top: 40px;
-    min-height: 100px;
+    color: white;
 }
+footer{
+    background-color: black;
+}
+
+
+/* Admin CSS */
