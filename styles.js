@@ -48,4 +48,39 @@ $("document").ready(function(){
         $("#deleteProduct").hide();
     });
 
+    $("#gridsCheck").change(function(){
+        var st = this.checked;
+        if(st){
+          $(".signups").prop("disabled", false);
+        } else{
+          $(".signups").prop("disabled", true);
+        }
+        
+    });
+
+    
+    // control for enquirires button
+    $("#pendingQ").hide();
+    $("#resolvedQ").hide();
+
+    $("#pend").click(function(){
+        $("#newQ").hide();
+        $("#pendingQ").show();
+        $("#resolvedQ").hide();
+    });
+
+    $("#resolved").click(function(){
+        $("#newQ").hide();
+        $("#pendingQ").hide();
+        $("#resolvedQ").show();
+    });
+
+    $("#newsz").click(function(){
+        $("#newQ").show();
+        $("#pendingQ").hide();
+        $("#resolvedQ").hide();
+    });
+
+
+
 })

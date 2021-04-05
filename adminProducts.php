@@ -1,6 +1,5 @@
 <?php include "start.php"; ?>
 
-
 <div class="row">
     <div class="col-md-2 adDivs advivs text-center">
         <?php include "sidebar.php"; ?>
@@ -71,15 +70,15 @@
                         }
                     ?>
                         <div class="form-row">
-                        
+                            <div class="form-group col-12 px-4">
                                 <label for="products">Products Name</label>
-                                <input type="text" class="form-control" id="products" placeholder="Name of products" name="productName" required>
-                            
-                        </div>
+                                <input type="text" class="form-control" placeholder="Name of products" name="productName" required>
+                            </div>
+                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6 px-4">
                                 <label for="products">Products Short Description</label>
-                                <input type="text" class="form-control" id="products" placeholder="Short Description" name="productShort" required>
+                                <input type="text" class="form-control" placeholder="Short Description" name="productShort" required>
                             </div>
                             <div class="form-group col-md-6 px-4">
                                 <label for="productPrice">Product Price</label>
@@ -93,11 +92,13 @@
                             </div>
                             <div class="form-group col-md-6 px-4">
                                 <label for="products">Products Photo</label>
-                                <input type="file" class="form-control" id="products" placeholder="Short Description" name="productImg" required>
+                                <input type="file" class="form-control" placeholder="Short Description" name="productImg" required>
                             </div>
                         </div>
-                        <div class="form-group px-4">
-                            <button type="submit" name="submitProduct" class="adminbtn">Upload Product</button>
+                        <div class="form-row">
+                            <div class="form-group col-12 px-4">
+                                <button type="submit" name="submitProduct" class="adminbtn">Upload Product</button>
+                            </div>
                         </div>
                 </form>
             </div>
@@ -105,7 +106,11 @@
         <div class="row">
             <div class="col-md-10 offset-md-1 mt-3 table-responsive" id="viewProducts">
                 <h4 class="text-center mt-2 mb-2">View Uploaded Products</h4>
-                <?php $adminProduct = $admin->products(); ?>
+                    <?php  require("productclass.php");
+                            $pro = new product;
+
+                    ?>
+                <?php $adminProduct = $pro->products(); ?>
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -137,7 +142,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-10 offset-md-1" id="deleteProduct">
+            <div class="col-md-10 offset-md-1 table-responsive" id="deleteProduct">
                     <h4 class="text-center mt-3 mb-2">Delete a Product</h4>
                     <?php 
                         if(isset($_GET['delete']) && ($_GET['delete'] == 'success')){
@@ -148,7 +153,7 @@
                             echo'</div>';
                         }
                     ?>
-                    <?php $adminProduct = $admin->products(); ?>
+                    <?php $adminProduct = $pro->products(); ?>
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -166,7 +171,7 @@
                                 <td colspan="6"><p class="alert alert-primary text-center" style="width: 100%; height:200px;">You are yet to upload a Product. Kindly do so.</p></td>
                             </tr>
                         </tbody>
-                   <?php  } else {  foreach($adminProduct as $products){?>
+                   <?php  } else {  foreach($adminProduct as $products) { ?>
                     <tbody>
                         <tr>
                             <td><?php echo $products['productName']; ?></td>
@@ -174,7 +179,7 @@
                             <td><?php echo $products['productLong']; ?></td>
                             <td>&#8358;<?php echo number_format($products['productPrice'],2); ?></td>
                             <td><img src="<?php echo $products['productImg']; ?>" alt="<?php echo $products['productName']; ?>" width="150px" height="150px"></td>
-                            <td><a href="process.php?deleteProduct=<?php echo $products['id']; ?>"><button class="adminbtn">Delete Product</button></a></td>
+                            <td><a href="process.php?deleteProduct=<?php echo $products['products_id']; ?>"><button class="adminbtn">Delete Product</button></a></td>
                         </tr>
                     </tbody>
                     <?php  } }  ?>

@@ -4,6 +4,9 @@ $admin = new adminDet;
 $admin->adminDetails($id);
 $adminsdet = $admin->adminDetails($id);
 
+require("contactsclass.php");
+$cont = new contact;
+$MessageCount = $cont->countMessage();
 
 ?>
 
@@ -27,7 +30,11 @@ $adminsdet = $admin->adminDetails($id);
                 <a href="adminBlogs.php"><button class="adminbtn">Blogs</button></a>
             </div>
             <div class="col-12 admdivs">
-                <a href="adminContant.php"><button class="adminbtn">Enquiries <span>0</span></button></a>
+                <?php if($MessageCount == 0){ ?>
+                    <a href="adminContant.php"><button class="adminbtn">Enquiries <span><?php echo 0; ?></span></button></a>
+                <?php } else {  ?>
+                <a href="adminContant.php"><button class="adminbtn">Enquiries <span><?php echo  $MessageCount; ?></span></button></a>
+                <?php  } ?>
             </div>
             <div class="col-12 admdivs">
                 <a href="admincustomer.php"><button class="adminbtn">Customers</button></a>

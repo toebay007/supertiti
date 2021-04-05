@@ -52,10 +52,12 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
+                    <label for="phoneNo">Phone Number</label>
                         <input type="tel" class="form-control" id="phoneNo" placeholder="phone number" name="phoneNo" >
                     </div>
                     <div class="form-group col-md-6">
-                        <input type="text" name="username" id="username" class="form-control" placeholder="Username" required>
+                    <label for="dob">Date of birth</label>
+                        <input type="date" name="dob" id="dob" class="form-control" placeholder="Date of Birth " required>
                     </div>
                 </div>
                 <div class="form-group">
@@ -70,8 +72,9 @@
                             <span>I agree to terms and conditions of usage on this website.</span>
                         </label>
                     </div>
+                    <p class="mt-3">Forgot password? click <a href="#">Here</a></p>
                 </div>
-                <button type="submit" name="submitReg" class="adminbtn" disabled>Sign Up</button>
+                <button type="submit" name="submitReg" class="adminbtn  signups" disabled>Sign Up</button>
             </form>      
         </div>
         </div>

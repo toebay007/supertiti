@@ -41,35 +41,6 @@ class adminDet extends connOthers{
             return $items;
         }
     }
-
-    function products(){
-        $sql = "SELECT * FROM productszs";
-        $result = $this->conn->query($sql);
-        $items = [];
-        if ($result->num_rows > 0){
-            while ( $row = $result->fetch_assoc()){
-                $items[] = $row;
-            }
-            return $items;
-        }
-    }
-
-    function deleteProduct($id){
-        $sql = "DELETE productszs FROM productszs Where id = $id";
-        $result = $this->conn->query($sql);
-      //  $items = [];
-        if ($result == true){
-          //var_dump($result);
-           header("location:adminProducts.php#deleteProduct?delete=success");
-        }else{
-        header("location:adminProducts.php#deleteProduct?delete=failed");
-        }
-    }
-
-
-
-
-
 }
 
 

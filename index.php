@@ -1,4 +1,30 @@
-<?php  include "abcHeaders.php"; ?>
+<?php include "abcHeaders.php"; ?>
+<?php 
+
+    require("contactsclass.php");
+    $cont = new contact;
+    $testi = $cont->getTesti();
+    $blog = $cont->getBlogs();
+
+?>
+                    <?php 
+                        if(isset($_GET['login']) && ($_GET['login'] == 'success')){
+                            echo'<div class="alert alert-success alert-dismissible fade show">';
+                            echo'Logged in Successfully';
+                            echo'<button type="button" class="close" data-dismiss="alert" aria-label="close">
+                                    <span aria-hidden="true">&times;</span></button>';
+                            echo'</div>';
+                        }
+                    ?>
+                <?php 
+                        if(isset($_GET['login']) && ($_GET['login'] == 'fail')){
+                            echo'<div class="alert alert-danger alert-dismissible fade show">';
+                            echo'login failed. Check that your details are correctly put';
+                            echo'<button type="button" class="close" data-dismiss="alert" aria-label="close">
+                                    <span aria-hidden="true">&times;</span></button>';
+                            echo'</div>';
+                        }
+                    ?>
 <!-- main pic -->
 <div class="row mainPic">
     <div class="col-12 mainpics">
@@ -119,33 +145,26 @@
 <div class="row">
     <div class="col-md-10 offset-md-1">
         <div class="row">
-            <div class="col-md-4 regs">
-                <h6 class="h3 text-center">
-                    <img src="img/fFruit.jpeg" alt="clients" width="100px" height="100px" class="testImg">
-                    <br><br>
-                    <p class="text-muted" style="font-size: 1rem; font-style: normal;">This is an excellent company i personally enjoyed the energy and the professional support the whole team gave to us into supplying the STC30 products</p>
-                    <p><strong>Lindsay Swaaan</strong></p>
-                    <span class="text-muted"  style="font-size: 1rem;">MD/CEO</span>
-                </h6>
-            </div>
-            <div class="col-md-4 regs">
-            <h6 class="h3 text-center">
-                    <img src="img/fFruit.jpeg" alt="clients" width="100px" height="100px" class="testImg">
-                    <br><br>
-                    <p class="text-muted" style="font-size: 1rem; font-style: normal;">This is an excellent company i personally enjoyed the energy and the professional support the whole team gave to us into supplying the STC30 products</p>
-                    <p><strong>Lindsay Swaaan</strong></p>
-                    <span class="text-muted"  style="font-size: 1rem;">MD/CEO</span>
-                </h6>
-            </div>
-            <div class="col-md-4 regs">
-            <h6 class="h3 text-center">
-                    <img src="img/fFruit.jpeg" alt="clients" width="100px" height="100px" class="testImg">
-                    <br><br>
-                    <p class="text-muted" style="font-size: 1rem; font-style: normal;">This is an excellent company i personally enjoyed the energy and the professional support the whole team gave to us into supplying the STC30 products</p>
-                    <p><strong>Lindsay Swaaan</strong></p>
-                    <span class="text-muted"  style="font-size: 1rem;">MD/CEO</span>
-                </h6>
-            </div>
+            <?php if(empty($testi)){ ?>  
+                <div class="col-md-4 regs">
+                    <h6 class="h3 text-center">
+                        <img src="img/fFruit.jpeg" alt="clients" width="100px" height="100px" class="testImg">
+                        <br><br>
+                        <p class="text-muted" style="font-size: 1rem; font-style: normal;">Testimonies would be uploaded shortly please bear with us</p>
+                        <p><strong>supertiti.life</strong></p>
+                        <span class="text-muted"  style="font-size: 1rem;">Admin</span>
+                    </h6>
+                </div>
+            <?php } else{ foreach($testi as $testimony){  ?>
+                <div class="col-md-4 regs">
+                    <h6 class="h3 text-center">
+                        <img src="<?php echo $testimony['Pphoto'] ?>" alt="<?php echo $testimony['authors']; ?> testimony" width="100px" height="100px" class="testImg">
+                        <br><br>
+                        <p class="text-muted" style="font-size: 1rem; font-style: normal;"><?php echo $testimony['content'] ?></p>
+                        <span class="text-muted"  style="font-size: 1rem;"><?php echo $testimony['authors'] ?></span>
+                    </h6>
+                </div>
+            <?php  } } ?>
         </div>
     </div>
 </div>
@@ -162,36 +181,31 @@
 <div class="row">
     <div class="col-md-10 offset-md-1">
         <div class="row">
-            <div class="col-md-4 regs">
-                <div class="card">
-                    <img src="img/tFruit.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago || By Admin</small></p>
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <?php if(empty($blog)){ ?>  
+                <div class="col-md-4 regs">
+                    <div class="card">
+                        <img src=".../" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <p class="card-text"><small class="text-muted">No upload</small></p>
+                            <h5 class="card-title">No title</h5>
+                            <p class="card-text">Nothing has been uploaded yet</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 regs">
-                <div class="card">
-                    <img src="img/tFruit.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago || By Admin</small></p>
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <?php } else{ foreach( $blog as $blogs){ ?>
+                <div class="col-md-4 regs">
+                    <div class="card">
+                        <img src="<?php echo $blogs['Pphoto'] ?>" class="card-img-top" alt="<?php echo $blogs['topicz'] ?>">
+                        <div class="card-body">
+                        <p class="card-text"><small class="text-muted">Uploaded on <?php echo $blogs['created'] ?> || By Admin</small></p>
+                            <h5 class="card-title"><?php echo $blogs['topicz'] ?></h5>
+                            <p class="card-text"><?php echo $blogs['shrtDesc'] ?></p>
+                        </div>
+                        <div>
+                            <span class="px-4 text-muted"><a href="blog.php?id=<?php echo $blogs['id'] ?>">Read more >>></a></span></div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 regs">
-                <div class="card">
-                    <img src="img/tFruit.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago || By Admin</small></p>
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                </div>
-            </div>
+            <?php   }}  ?>
         </div>
     </div>
 </div>

@@ -107,8 +107,8 @@ $obj5->createProducts($productName,$productShort,$productPrice,$productLong,$_FI
 
 }  else if(isset($_GET["deleteProduct"])){
   $id = $_GET['deleteProduct']; 
-  require("admindeets.php");
-  $obj6 = new adminDet;
+  require("productclass.php");
+  $obj6 = new product;
  
   //echo "$id";
 
@@ -136,6 +136,81 @@ $obj5->createProducts($productName,$productShort,$productPrice,$productLong,$_FI
 
 //echo "$pwdz";
 $obj5->createProducts($productName,$productShort,$productPrice,$productLong,$_FILES);
+
+}    else if(isset($_POST["submitReg"])){
+
+  require("userclass.php");
+
+  $obj6 = new user;
+
+  function test_input($data) {
+      $data = trim($data);
+      $data = stripslashes($data);
+      $data = htmlspecialchars($data);
+      return $data;
+    }
+
+    $fname = test_input( $_POST['fname']);
+    $lname = test_input( $_POST['lname']);
+    $pwd1 = test_input( $_POST['pwd1']);
+    $pwd2 = test_input( $_POST['pwd2']);
+    $phoneNo = test_input( $_POST['phoneNo']);
+    $dob = test_input( $_POST['dob']);
+    $email = test_input( $_POST['email']);
+
+// echo "$email";
+  $obj6->createUser($fname,$lname,$pwd1,$pwd2,$phoneNo,$dob,$email);
+}   else if(isset($_POST["submituser"])){
+
+  require("userclass.php");
+
+  $obj7 = new user;
+
+  function test_input($data) {
+      $data = trim($data);
+      $data = stripslashes($data);
+      $data = htmlspecialchars($data);
+      return $data;
+    }
+
+  $userEmail = test_input( $_POST['userEmail']);
+  $userPwd = test_input( $_POST['userPwd']);
+
+  //echo "$pwdz";
+  $obj7->userLogin($userEmail,$userPwd);
+
+}   else if(isset($_POST["submitszs"])){
+
+  require("contactsclass.php");
+
+  $obj8 = new contact;
+
+  function test_input($data) {
+      $data = trim($data);
+      $data = stripslashes($data);
+      $data = htmlspecialchars($data);
+      return $data;
+    }
+
+  $namez = test_input( $_POST['nameszs']);
+  $emailzs = test_input( $_POST['emailszs']);
+  $subject = test_input( $_POST['subjectszs']);
+  $messagezs = test_input( $_POST['messageszs']);
+
+  //echo "$messagezs";
+   $obj8->insertMessage($namez,$emailzs,$subject,$messagezs);
+
+}   else if(isset($_POST["messageDetails"])){
+
+  require("contactsclass.php");
+
+  $obj8 = new contact;
+
+  $messagestatus = trim(htmlentities($_POST['messagestatus']));
+  $idsa = trim(htmlentities( $_POST['conID']));
+
+  // echo "$messagestatus";
+   $obj8->messageUpdate($messagestatus,$idsa);
 
 }
 

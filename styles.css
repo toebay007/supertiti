@@ -47,7 +47,6 @@ h1, h2, h3, h4, h5, h6, p, span, small, nav, ol{
     background-color: rgb(11, 11, 78);
 }
 .quick{
-    border: 1px solid red;
     min-height: 20px;
     margin-bottom: 20px;
 }
@@ -161,12 +160,29 @@ img{
 .button:focus{
     background-color: rgb(11, 11, 78);
 }
+.card-img-top{
+    height: 300px;
+    justify-content: center;
+}
+.blogImg{
+    height: 500px;
+    justify-content: center;
+    border-radius: 5px;
+    width: 80%;
+    box-shadow: 0px 2px 2px 2px rgb(185, 177, 177);
+}
  /* Product snippet design */
 
-
+.proDetail{
+    margin-top: 10px;
+    width: 80%;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow:0px 5px 10px rgb(196, 187, 186);
+}
  .proImg{
     margin-top: 10px;
-    width: 100%;
+    width: 80%;
     height: 100px;
     border-radius: 10px;
     box-shadow:0px 5px 10px rgb(196, 187, 186);
@@ -179,6 +195,11 @@ img{
 }
 .proImg:hover{
     transform: scale(1.2);
+}
+.detailss{
+    min-height: 100px;
+    margin-bottom: 10px;
+    font-family: 'Josefin Sans', sans-serif;
 }
 .pros{
     text-align: center;
@@ -210,9 +231,9 @@ img{
     margin-bottom: 20px;
 }
 .cartsAdd:hover{
+    color: white;
     box-shadow: 0px 5px 10px rgb(102, 126, 207);
     border: none;
-    color: black;
 }
 .cartsAdd:focus{
     box-shadow: 0px 10px 10px #1b2e61;
@@ -220,8 +241,33 @@ img{
     border: none;
     background-color: rgb(46, 46, 71);
 }
+.notes{
+    background-color:  rgb(14, 9, 14);
+    color: rgb(14, 9, 14);
+    height: 35px;
+    margin-top: 0px;
  /* end of product design */
-
+}
+.cartADDS{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px 2px rgb(151, 147, 147);
+    width: 100%;
+    color: white;
+    background-color: rgb(49, 39, 110);
+}
+.cartADDS:hover{
+    box-shadow: 0px 3px 3px 3px rgb(84, 84, 124);
+    background-color: rgb(29, 29, 172);
+}
+.cartADDS:focus{
+    box-shadow: 0px 3px 3px 3px rgb(31, 31, 70);
+    background-color: rgb(62, 62, 243);
+    outline: none;
+    text-decoration: none;
+    border: none;
+}
 
 
 
@@ -280,8 +326,9 @@ img{
 
 
 /* footer */
+
 .foot{
-    background-color: rgb(7, 7, 7);
+    background-color: black;
     margin-top: 40px;
     color: white;
 }

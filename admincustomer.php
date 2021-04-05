@@ -19,7 +19,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td colspan="5"><p class="alert alert-primary text-center" style="width: 100%; height:200px;">No registers customer yet.</p></td>
+                    <td colspan="5"><p class="alert alert-primary text-center" style="width: 100%; height:200px;">No registered customer yet.</p></td>
                 </tr>
             </tbody>
         </table>
