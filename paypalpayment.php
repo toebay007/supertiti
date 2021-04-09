@@ -7,7 +7,7 @@
 
 
 <?php if(!empty($_SESSION['product_carts'])) { ?>
-    <table class="table">
+    <table class="table table-borderless">
             <thead class="thead-dark">
                 <tr>
                     <th scope="col" colspan="2">Name</th>
@@ -63,6 +63,9 @@
                                 <img alt="" border="0" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" > 
                 </form>
                     </th>
+                </tr>
+                <tr>
+                    <td colspan="5"><img src="img/paypal.png" alt="paypal" width="50%" height="50px"></td>
                 </tr>
                             <?php } ?>
             </tbody>

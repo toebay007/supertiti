@@ -60,6 +60,7 @@
                     <h4 class="mt-4">Subscribe to our Newsletter</h4>
                     <p>Please subscribe to our newsletter by entering your email address in the box below</p>  
                     <input type="text" name="sub" id="sub" class="form-control">
+                    <img src="img/payment.png" alt="payment" width="50%" height="50px">
                 </div>              
                 <div class="col-md-3 foot">
                     <h4 class="mt-4">Follow us on Social Media</h4>

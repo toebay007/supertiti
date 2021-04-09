@@ -113,6 +113,9 @@ $use = $a->getUser($user);
                         </form>
                     </th>
                 </tr>
+                <tr>
+                  <td colspan="6"><img src="img/paypal.png" alt="paypal" width="50%" height="50px"></td>
+                </tr>
                             <?php } ?>
             </tbody>
         </table>
