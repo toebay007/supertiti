@@ -1,4 +1,10 @@
-<?php include "start.php"; ?>
+<?php include "start.php"; 
+
+    require("orders.php");
+    $c = new orders;
+    $customer = $c->getFrequentCustomers();
+
+?>
 
 
 <div class="row">
@@ -13,14 +19,22 @@
                     <th>Customer's Name</th>
                     <th>Email Address</th>
                     <th>Address</th>
-                    <th>Total Number of Orders</th>
                     <th>Phone Number</th>
                 </tr>
             </thead>
             <tbody>
+            <?php if(empty($customer)){  ?>  
                 <tr>
-                    <td colspan="5"><p class="alert alert-primary text-center" style="width: 100%; height:200px;">No registered customer yet.</p></td>
+                        <td colspan="5"><p class="alert alert-primary text-center" style="width: 100%; height:200px;">No registered customer yet.</p></td>
                 </tr>
+            <?php  } else{  foreach($customer as $customers){  ?>
+               <tr>
+                   <td><?php echo $customers['Fullname'];  ?></td>
+                   <td><?php echo $customers['Address'];  ?></td>
+                   <td><?php echo $customers['emailzs'];  ?></td>
+                   <td><?php echo $customers['phoneNo'];  ?></td>
+               </tr>
+               <?php   }  }   ?>
             </tbody>
         </table>
     </div>

@@ -81,6 +81,27 @@ $("document").ready(function(){
         $("#resolvedQ").hide();
     });
 
+// Control for Orders in Admin
 
+    $("#orderHistory").hide();
+    $("#orderFrequency").hide();
+
+    $("#ordersH").click(function(){
+        $("#ordertable").hide();
+        $("#orderHistory").show();
+        $("#orderFrequency").hide();
+    });
+
+    $("#ordersFre").click(function(){
+        $("#ordertable").hide();
+        $("#orderHistory").hide();
+        $("#orderFrequency").show();
+    });
+
+    $("#orders").click(function(){
+        $("#ordertable").show();
+        $("#orderHistory").hide();
+        $("#orderFrequency").hide();
+    });
 
 })

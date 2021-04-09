@@ -1,4 +1,9 @@
-<?php  include "abcHeaders.php";  ?>
+<?php 
+error_reporting(0);
+session_start();
+if (isset($_SESSION['staff_name'])) {
+    header("location:home.php");
+}else { include "abcHeaders.php";  ?>
 
 <div class="row">
     <div class="col-12">
@@ -39,4 +44,4 @@
 </div>
 
 
-<?php  include "xyzFooters.php";   ?>
+<?php  include "xyzFooters.php"; }  ?>

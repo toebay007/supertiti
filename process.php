@@ -212,6 +212,20 @@ $obj5->createProducts($productName,$productShort,$productPrice,$productLong,$_FI
   // echo "$messagestatus";
    $obj8->messageUpdate($messagestatus,$idsa);
 
+} else if(isset($_POST["statusSave"])){
+
+  require("orders.php");
+
+  $obj9 = new orders;
+
+        $orderstatus = trim(htmlentities($_POST['orderstatus']));
+        $orderid = trim(htmlentities($_POST['orderid']));
+ // echo $orderstatus;
+
+       $obj9-> ordersUpdate($orderstatus,$orderid);
+
 }
 
+
 ?>
+      

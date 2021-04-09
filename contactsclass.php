@@ -146,10 +146,22 @@ function readBlog($id2z){
         return $items;
     }
 }
-
-
 function linkBlog(){
     $sql = "SELECT * FROM blogs order by id DESC";
+    $result = $this->conn->query($sql);
+    $items = [];
+    if($result->num_rows > 0){
+        while($row = $result->fetch_assoc()){
+            $items[] = $row;
+        }
+        return $items;
+    }
+}
+
+
+function linkBlogsRead(){
+    $sql = "SELECT * FROM blogs order by id DESC LIMIT 1
+    ";
     $result = $this->conn->query($sql);
     $items = [];
     if($result->num_rows > 0){

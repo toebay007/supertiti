@@ -36,7 +36,7 @@
                             <div class="pros">
                                 <p>
                                     <b>
-                                    &#8358;<?php echo number_format($product['productPrice'],2);?>
+                                    $<?php echo number_format($product['productPrice'],2);?>
                                     </b>
                                 </p>
                             </div>

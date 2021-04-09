@@ -4,8 +4,6 @@ $admin = new adminDet;
 $admin->adminDetails($id);
 $adminsdet = $admin->adminDetails($id);
 
-require("contactsclass.php");
-$cont = new contact;
 $MessageCount = $cont->countMessage();
 
 ?>

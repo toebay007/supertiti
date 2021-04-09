@@ -133,7 +133,7 @@
                             <td><?php echo $products['productName']; ?></td>
                             <td><?php echo $products['productShort']; ?></td>
                             <td><?php echo $products['productLong']; ?></td>
-                            <td>&#8358;<?php echo number_format($products['productPrice'],2); ?></td>
+                            <td>$ <?php echo number_format($products['productPrice'],2); ?></td>
                             <td><img src="<?php echo $products['productImg']; ?>" alt="<?php echo $products['productName']; ?>" width="150px" height="150px"></td>
                         </tr>
                     </tbody>
@@ -177,7 +177,7 @@
                             <td><?php echo $products['productName']; ?></td>
                             <td><?php echo $products['productShort']; ?></td>
                             <td><?php echo $products['productLong']; ?></td>
-                            <td>&#8358;<?php echo number_format($products['productPrice'],2); ?></td>
+                            <td>$ <?php echo number_format($products['productPrice'],2); ?></td>
                             <td><img src="<?php echo $products['productImg']; ?>" alt="<?php echo $products['productName']; ?>" width="150px" height="150px"></td>
                             <td><a href="process.php?deleteProduct=<?php echo $products['products_id']; ?>"><button class="adminbtn">Delete Product</button></a></td>
                         </tr>

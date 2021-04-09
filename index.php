@@ -1,17 +1,50 @@
 <?php include "abcHeaders.php"; ?>
 <?php 
 
-    require("contactsclass.php");
-    $cont = new contact;
     $testi = $cont->getTesti();
     $blog = $cont->getBlogs();
 
 ?>
                     <?php 
+                        if(isset($_GET['payment']) && ($_GET['payment'] == 'canceled')){
+                            echo'<div class="alert alert-danger alert-dismissible fade show">';
+                            echo'Payment Unsuccessful. Please try again';
+                            echo'<button type="button" class="close" data-bs-dismiss="alert" aria-label="close">
+                                    <span aria-hidden="true">&times;</span></button>';
+                            echo'</div>';
+                            unset($_SESSION['product_carts']);
+                            // require("dbConnect.php");
+                            //     $records = $mysqli->query("INSERT INTO payments SET payments_status = 'success' WHERE ");
+
+                        }
+                    ?>
+                    <?php 
+                        if(isset($_GET['payment']) && ($_GET['payment'] == 'successful')){
+                            echo'<div class="alert alert-success alert-dismissible fade show">';
+                            echo'Payment Successful';
+                            echo'<button type="button" class="close" data-bs-dismiss="alert" aria-label="close">
+                                    <span aria-hidden="true">&times;</span></button>';
+                            echo'</div>';
+                            unset($_SESSION['product_carts']);
+                            // require("dbConnect.php");
+                            //     $records = $mysqli->query("INSERT INTO payments SET payments_status = 'success' WHERE ");
+
+                        }
+                    ?>
+                    <?php 
+                        if(isset($_GET['reg']) && ($_GET['reg'] == 'successful')){
+                            echo'<div class="alert alert-success alert-dismissible fade show">';
+                            echo'Registration Successful';
+                            echo'<button type="button" class="close" data-bs-dismiss="alert" aria-label="close">
+                                    <span aria-hidden="true">&times;</span></button>';
+                            echo'</div>';
+                        }
+                    ?>
+                    <?php 
                         if(isset($_GET['login']) && ($_GET['login'] == 'success')){
                             echo'<div class="alert alert-success alert-dismissible fade show">';
                             echo'Logged in Successfully';
-                            echo'<button type="button" class="close" data-dismiss="alert" aria-label="close">
+                            echo'<button type="button" class="close" data-bs-dismiss="alert" aria-label="close">
                                     <span aria-hidden="true">&times;</span></button>';
                             echo'</div>';
                         }
@@ -20,7 +53,7 @@
                         if(isset($_GET['login']) && ($_GET['login'] == 'fail')){
                             echo'<div class="alert alert-danger alert-dismissible fade show">';
                             echo'login failed. Check that your details are correctly put';
-                            echo'<button type="button" class="close" data-dismiss="alert" aria-label="close">
+                            echo'<button type="button" class="close" data-bs-dismiss="alert" aria-label="close">
                                     <span aria-hidden="true">&times;</span></button>';
                             echo'</div>';
                         }
@@ -53,7 +86,17 @@
 </div>
 
 <!-- End of Quick About -->
-
+<!-- Facebook post -->
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+    <div class="fb-page" 
+        data-href="https://www.facebook.com/Super-Titilola-102281345310792/"
+        data-width="450" 
+        data-hide-cover="false"
+        data-show-facepile="false"></div>
+    </div>
+</div>
+<!-- End of Facebook Post -->
 <!-- additional about -->
 <div class="row addAbout">
     <div class="col-md-1"></div>
@@ -64,7 +107,7 @@
                     <p class="text-center iconss"><i class="bi bi-check-square-fill" style="font-size: 3rem; color: green ;"></i></p>
                     <p style="font-size: 1.5rem">Legality</p>
                     <p class="text-center" style="font-size: 1rem">
-                    We legalize the business operations in every country.
+                    We legalize the business operations in every country ans ensure optimum compliance with laws and health regulations in every country..
                     </p>
                 </h3>
             </div>
@@ -73,7 +116,7 @@
                     <p class="text-center iconss"><i class="bi bi-check-square-fill" style="font-size: 3rem; color: green ;"></i></p>
                     <p style="font-size: 1.5rem">Freedom</p>
                     <p class="text-center" style="font-size: 1rem">
-                    Free movement of Super Points around the world                    </p>
+                    Our products move freely across borders without restrictions. You need us, We get to you regardless of your location                    </p>
                 </h3>
             </div>
             <div class="col-md-3 addAbouts">
@@ -81,7 +124,7 @@
                     <p class="text-center iconss"><i class="bi bi-check-square-fill" style="font-size: 3rem; color: green ;"></i></p>
                     <p style="font-size: 1.5rem">Payment</p>
                     <p class="text-center" style="font-size: 1rem">
-                    Enable various methods of payment to facilitate transactions globally                    </p>
+                   Payment on this platform is Secured by Paypal technologies. Transcations and Products are authenthic                 </p>
                 </h3>
             </div>
             <div class="col-md-3 addAbouts">
@@ -89,7 +132,7 @@
                     <p class="text-center iconss"><i class="bi bi-check-square-fill" style="font-size: 3rem; color: green ;"></i></p>
                     <p style="font-size: 1.5rem">Logistics</p>
                     <p class="text-center" style="font-size: 1rem">
-                    Efficient logistics management to deliver products anywhere in the world                    </p>
+                    Efficient logistics management to deliver products anywhere in the world, with several courier service options at your disposal.                    </p>
                 </h3>
             </div>
         </div>
@@ -105,7 +148,7 @@
         <img src="img/fBusiness.jpeg" alt="business image" width="100%" height="400px" class="imgs">
     </div>
     <div class="col-md-5 regs">
-        <h4>SuperLife Nigeria - Local <br> Business summit</h4>
+        <h4>SuperLife Worldwide <br> Business summit</h4>
         <div>
             <ol>
                 <li> Attend our next Free Awareness Seminar</li>
@@ -117,7 +160,7 @@
             </ol>
         </div>
         <div class="mt-4">
-            <button class="btnss">Register Now</button>
+            <a href="member.php"><button class="btnss">Register Now</button></a>
         </div>
     </div>
     <div class="col-md-1 regs"></div>
@@ -151,7 +194,7 @@
                         <img src="img/fFruit.jpeg" alt="clients" width="100px" height="100px" class="testImg">
                         <br><br>
                         <p class="text-muted" style="font-size: 1rem; font-style: normal;">Testimonies would be uploaded shortly please bear with us</p>
-                        <p><strong>supertiti.life</strong></p>
+                        <p><strong>supertitilola.life</strong></p>
                         <span class="text-muted"  style="font-size: 1rem;">Admin</span>
                     </h6>
                 </div>
@@ -160,7 +203,7 @@
                     <h6 class="h3 text-center">
                         <img src="<?php echo $testimony['Pphoto'] ?>" alt="<?php echo $testimony['authors']; ?> testimony" width="100px" height="100px" class="testImg">
                         <br><br>
-                        <p class="text-muted" style="font-size: 1rem; font-style: normal;"><?php echo $testimony['content'] ?></p>
+                        <p class="text-muted" style="font-size: 1rem; font-style: normal;"><?php  $pos=strpos($testimony['content'], ' ', 100); echo substr($testimony['content'],0,$pos);  ?></p>
                         <span class="text-muted"  style="font-size: 1rem;"><?php echo $testimony['authors'] ?></span>
                     </h6>
                 </div>
@@ -184,7 +227,7 @@
             <?php if(empty($blog)){ ?>  
                 <div class="col-md-4 regs">
                     <div class="card">
-                        <img src=".../" class="card-img-top" alt="...">
+                        <img src="img/sFruit.jpeg" class="card-img-top" alt="Bear with us">
                         <div class="card-body">
                         <p class="card-text"><small class="text-muted">No upload</small></p>
                             <h5 class="card-title">No title</h5>
@@ -199,7 +242,7 @@
                         <div class="card-body">
                         <p class="card-text"><small class="text-muted">Uploaded on <?php echo $blogs['created'] ?> || By Admin</small></p>
                             <h5 class="card-title"><?php echo $blogs['topicz'] ?></h5>
-                            <p class="card-text"><?php echo $blogs['shrtDesc'] ?></p>
+                            <p class="card-text"><?php  $pos=strpos($blogs['shrtDesc'], ' ', 100); echo substr($blogs['shrtDesc'],0,$pos); ?></p>
                         </div>
                         <div>
                             <span class="px-4 text-muted"><a href="blog.php?id=<?php echo $blogs['id'] ?>">Read more >>></a></span></div>

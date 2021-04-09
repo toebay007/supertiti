@@ -1,4 +1,6 @@
-<?php    session_start();  ?>
+<?php    session_start();  
+    require("contactsclass.php");
+    $cont = new contact; ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,7 +21,7 @@
         <div class="container-fluid">
             <!-- Beginning of Navigation -->
             <div class="row firstNav">
-                <div class="col-md-6 col-sm-6 mt-3">
+                <div class="col-md-4 col-sm-6 mt-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-geo-alt" viewBox="0 0 16 16">
                         <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
                         <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
@@ -33,21 +35,21 @@
                             <span class="navSpan">+234-(0)-1234-123-1234</span>
                         </span>
                 </div>
-                <div class="col-md-1 col-sm-6">
-
-                </div>
+                <div class="col-md-2"></div>
                 <div class="col-md-2 col-xs-4 text-center mt-3">
-                    <span><a href="#" data-bs-toggle="modal" data-bs-target="#login">Login</a></span>
+                <?php  if(isset($_SESSION['ids']) || isset($_SESSION['fname'])) {} else{ ?>
+                    <span><a href="#" class="alog" data-bs-toggle="modal" data-bs-target="#login">Login</a></span>
                     / 
-                    <span><a href="user_register.php">Register</a></span>
+                    <span><a href="user_register.php"  class="alog">Register</a></span>
+                    <?php }  ?>
                 </div>
-                <div class="col-md-2 col-xs-4 text-center">
+                <div class="col-md-4 col-xs-4 text-center">
                     
-                    <i class="bi bi-facebook" style="margin-right: 15px;"></i>
-                    <i class="bi bi-instagram" style="margin-left: 15px; margin-right: 15px;"></i>
-                    <i class="bi bi-whatsapp" style="margin-left: 15px; margin-right: 15px;"></i>
-                                <button type="button" class="btn notes" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                    <i class="bi bi-cart-plus" style="color:white; margin-left: 10px; font-size: 1.25rem;"></i>
+                    <i class="bi bi-facebook" style="margin-right: 10px;"></i>
+                    <i class="bi bi-instagram" style="margin-right: 10px;"></i>
+                    <i class="bi bi-whatsapp" style="margin-right: 10px;"></i>
+                                <button type="button" class="btn notes" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <i class="bi bi-cart-plus" style="color:white;font-size: 1rem;"></i>
                                     <span class="badge badge-light" style="height:1rem;" id="countNo">
                                         <?php if(isset($_SESSION['product_cart'])){ 
                                             echo count($_SESSION['product_cart']); 

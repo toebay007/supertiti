@@ -269,6 +269,51 @@ img{
     border: none;
 }
 
+/* CSS for cart button */
+
+
+.subss{
+    margin-top: 20px;
+    border-radius: 4px;
+    background-color: #462e9b;
+    line-height: normal;
+    padding: 6px 20px;
+    min-height: 40px;
+    min-width: 150px;
+    color: black;
+    letter-spacing: 4px;
+}
+.subss:hover{
+    background-color: #2d0e68;
+    color: white;
+    box-shadow: 0 0 10px #436cf5;
+} 
+.subss:focus{
+    background-color: #010385;
+    color: white;
+    outline: none;
+}
+
+
+.breadcrumbs{
+    color: black;
+    margin: 0px;
+}
+.breadcrumbs:hover{
+    color: #2345db;
+}
+.alog{
+    color: white;
+    border: none;
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+.alog:hover{
+    color: white;
+    box-shadow: 0px 2px, 2px, rgb(126, 126, 209);
+}
+/* End of CSS for cart button */
 
 
 

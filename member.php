@@ -51,7 +51,7 @@ REQUIREMENTS
         <p><i class="bi bi-camera" style="font-size: 1.5rem;"></i> <span>Profile picture</span></p>
         <p style="font-size: 1.5rem;">Follow this link to join my WhatsApp group:</p>
         <div class="d-grid gap-2">
-            <button class="button">Contact me on Whatsapp for more details</button>
+            <a href="https://wa.me/+353862521470/?text=Good day, i got your number from your website, i would love to join the Network. My name is ______"><button class="button">Contact me on Whatsapp for more details</button></a>
         </div>
     </div>
     <div class="col-md-1 memb"></div>

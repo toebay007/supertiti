@@ -1,10 +1,10 @@
              <!-- Modal for Login -->
-             <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -31,24 +31,30 @@
                 <div class="col-md-3 foot">
                     <h4 class="mt-4">About SuperLife Products</h4>
                     <p class="mt-3 mb-3">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet in itaque voluptates labore molestiae ducimus voluptas reprehenderit id consectetur, at ipsa asperiores explicabo hic sint velit deleniti saepe veniam? Atque.
-                    </p>
+                    SUPER LIFE Plant Based Stem Cell Company, is a multi billion dollars industry with the newest innovations on plant stem cell. The company’s health products are capable of regenerating any cell in the body and are capable of renewing the skin stem cell. The other thing that is mind blowing about SUPER LIFE is her COMPENSATION PLAN.                    </p>
                 </div>
                 <div class="col-md-3 foot">
-                    <h4 class="mt-4">Latest Blog Post</h4>
-                        <div class="mb-3" style="max-width: 540px;">
-                            <div class="row g-0">
-                                <div class="col-md-4 mt-4">
-                                    <img src="img/tFruit.jpeg" alt="last post" width="100px" height="100px">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <p class="card-text" style="font-size: 0.9rem;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <p class="card-text" style="font-size: 0.7rem;"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <?php 
+                        $bink = $cont->linkBlogsRead(); ?>
+                        <?php if(empty($bink)){}  else{ foreach( $bink as $blinklogs ){ ?>
+                        <h4 class="mt-4">Latest Blog Post</h4>
+                            <div class="mb-3" style="max-width: 540px;">
+                                <div class="row g-0">
+                                    <div class="col-md-4 mt-4">
+                                        <img src="<?php echo $blinklogs['Pphoto'];  ?>" alt="<?php echo $blinklogs['topicz'];  ?>" width="100px" height="100px">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <p class="card-text" style="font-size: 0.9rem;"><?php $pos=strpos($blinklogs['shrtDesc'], ' ', 100); echo substr($blinklogs['shrtDesc'],0,$pos); ?></p>
+                                            <a href="blog.php?id=<?php echo $blinklogs['id'];  ?>">
+                                                <p style="color: white; border:none; outline:none; text-decoration:none;"><i>Read More >>></i></p></a>
+                                            <p class="card-text" style="font-size: 0.7rem;"><small class="text-muted"><?php echo $blinklogs['created'];  ?></small></p>
+                                            
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        <?php } }  ?>
                 </div>
                 <div class="col-md-3 foot">
                     <h4 class="mt-4">Subscribe to our Newsletter</h4>
@@ -57,10 +63,10 @@
                 </div>              
                 <div class="col-md-3 foot">
                     <h4 class="mt-4">Follow us on Social Media</h4>
-                    <p><i class="bi bi-facebook"></i> Facebook</p>
-                    <p><i class="bi bi-instagram"></i> instagram</p>
-                    <p><i class="bi bi-whatsapp"></i> Whatsapp</p>
-                    <p><i class="bi bi-whatsapp"></i> Telegram</p>
+                    <a href="https://www.facebook.com/Super-Titilola-102281345310792/"><p style="color: white; border:none; outline:none; text-decoration:none;"><i class="bi bi-facebook"></i> Facebook</p></a>
+                    <a href="https://www.instagram.com/titilola_ogunsakin/"><p style="color: white; border:none; outline:none; text-decoration:none;"><i class="bi bi-instagram"></i> instagram</p></a>
+                    <a href="https://wa.me/+353862521470/"><p style="color: white; border:none; outline:none; text-decoration:none;"><i class="bi bi-whatsapp"></i> Whatsapp</p></a>
+                    <a href="#"><p style="color: white; border:none; outline:none; text-decoration:none;"><i class="bi bi-whatsapp"></i> Telegram</p></a>
                 </div>
                 <hr width="100%" style="color:grey;" class="mt-4 mb-3">
                 <div class="row">
@@ -132,24 +138,55 @@
                 }
         </script>
                 <!-- Modal -->
-    <div class="modal fade bd-example-modal-lg" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel"><i class="fas fa-shopping-basket"></i>  SuperLife Cart</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body cart_data">
-                        
+                <!-- Modal -->
+<div class="modal fade bd-example-modal-xl cartzz" id="exampleModal" data-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-shopping-basket"></i>  SuperLife Cart</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body cart_data table-responsive">
                             
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-custom" data-dismiss="modal">Close</button>
-                </div>
+                                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-custom" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
+</div>
+    <!-- <script src="https://www.paypal.com/sdk/js?client-id=AQNqaaXoPQVcTcH8uJGXfEcUp4wPBHkUyadl8f_ml6z_cZALM0gV6LdCp76ZLXf4vIYQQy1gWsbsfdVD&disable-funding=credit,card"></script>
+   
+    <script>
+    // window.onload = function() {
+     window.price = document.getElementById("proTotal").value;
+//     //console.log(price);
+// };
+paypal.Buttons({
+    style : {
+        color:'blue',
+        shape:'pill'
+    },
+    createOrder: function(data, actions){
+        return actions.order.create({
+            purchase_units:[{
+                amount:{
+                    value: window.price
+                }
+            }]
+        })
+    },
+    onApprove:function(data, actions){
+        return actions.order.capture().then(function (details){
+            //console.log(details)
+            window.location.replace("http://localhost/superlife/supertiti/products.php?payment=successful")
+        })
+    },
+    onCancel:function(data,actions){
+        window.location.replace("http://localhost/superlife/supertiti/products.php?payment=failed")
+    }
+}).render('#paypal-payment');
+    </script> -->
     </body>
 </html>

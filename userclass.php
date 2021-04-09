@@ -25,7 +25,7 @@ require("connuser.php");
     
                    $result = $this->conn->query($sql);
                     if($result == true){
-                        header("location:index.php");
+                        header("location:index.php?reg=successful");
                     } else{
                         header("location:user_register.php?reg=failed");
                     }
@@ -62,6 +62,7 @@ require("connuser.php");
 
 
         }
+
 
 
 
