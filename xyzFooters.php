@@ -67,16 +67,22 @@
                     <a href="https://www.facebook.com/Super-Titilola-102281345310792/"><p style="color: white; border:none; outline:none; text-decoration:none;"><i class="bi bi-facebook"></i> Facebook</p></a>
                     <a href="https://www.instagram.com/titilola_ogunsakin/"><p style="color: white; border:none; outline:none; text-decoration:none;"><i class="bi bi-instagram"></i> instagram</p></a>
                     <a href="https://wa.me/+353862521470/"><p style="color: white; border:none; outline:none; text-decoration:none;"><i class="bi bi-whatsapp"></i> Whatsapp</p></a>
-                    <a href="#"><p style="color: white; border:none; outline:none; text-decoration:none;"><i class="bi bi-whatsapp"></i> Telegram</p></a>
+                    <a href="sms:{+353-86-252-1470}?body={content}"><p style="color: white; border:none; outline:none; text-decoration:none;"><i class="bi bi-chat-left-text"></i> SMS</p></a>
                 </div>
                 <hr width="100%" style="color:grey;" class="mt-4 mb-3">
                 <div class="row">
                     <div class="col-md-2 foot text-center text-muted">
-                        <small>Superlife Nigeria</small>
+                        <span>
+                            <abbr style="text-decoration:none;" title="This is a Public Disclaimer: (1) This site does not belong to / represents Superlife company. (2) Products and any uploads on this site, the owners do not claim authenticity or ownership of them. (3) The product itself does not curre diseases, it empowers the body to do its own healing. Remember, Good health is expensive but it is worth spending on. (4) Your health is important to us. Please consult your Doctor or other qualified health care professional before usinf this product.(5) The information, materials and services contained on this site are provided to you on a “as is”, and “as available” basis. We do not warrant or guarantee the accuracy or completeness of this information, statements, contents or materials, and expressly disclaim any liability for any errors, omissions and/or inaccuracies in this information, statements, contents and materials. SuperLifeWorld.com shall endeavor its best but is not obliged to correct any inaccuracies, errors, omissions or typographical errors in the information posted to this Web Site, and such information including information on pricing and availability of goods may be changed, amended or updated without notice.(6) To the maximum extent permitted by law, we disclaim liability for any damages including, without limitation, direct or indirect, special, incidental, compensatory, exemplary or consequential damages, losses or expenses, including without limitation lost or misdirected orders, lost profits, lost registrations, lost goodwill, or lost or stolen programs or other data, however caused and under any theory of liability arising out of or in connection with
+
+i) use of this site, or inability to see this site by any party; or
+ii) any failure or performance, error, omission, interruption, defect, delay in operation or transmission; or
+iii) line or system failure or the introduction of a computer virus, or other technical sabotage, even if we or our employees or representatives are advised of the possibility or likelihood of such damages, losses or expenses. ">DISCLAIMER</abbr>
+                        </span> 
                     </div>
                     <div class="col-md-8 foot"></div>
                     <div class="col-md-2 foot text-center text-muted">
-                    &copy; copyright 2021 TOG
+                    <small>Superlife products sold by Titilola</small> &copy; copyright 2021 TOG
                     </div>
                 </div>
             </div>

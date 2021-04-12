@@ -1,11 +1,13 @@
-<?php   
+<?php  
+$user = "";
+$orders = ""; 
 /*
 * Paypal and database configuration
 */
 
 // paypal configuration
-define('PAYPAL_ID', 'lolaogunsakin23@yahoo.com'); //Business email
-define('PAYPAL_SANDBOX', FALSE); //TRUE OR FALSE
+define('PAYPAL_ID', 'onyekaotobe@gmail.com'); //Business email
+define('PAYPAL_SANDBOX', TRUE); //TRUE OR FALSE
 
 define('PAYPAL_RETURN_URL', 'http://localhost/superlife/supertiti/index.php?payment=successful');
 define('PAYPAL_CANCEL_URL', 'http://localhost/superlife/supertiti/index.php?payment=canceled');

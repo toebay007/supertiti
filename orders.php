@@ -82,7 +82,7 @@
             }
         }
 
-        function insertCustOrder($userid,$ordertotal,$productid,$productqty){
+        function insertCustOrder($userid,$ordertotal,$productid,$productqty,$emailzs){
             $sql = "INSERT INTO customerorders SET users_id = '$userid', orders_amt = '$ordertotal'";
            
 
@@ -105,6 +105,10 @@
 
                     $result = $this->conn->query($sql2);
                   //  print_r($result);
+
+                  $sql3 = "INSERT INTO payments SET orders_id = '$ordersid', emailzs = '$emailzs'";
+
+                  $result = $this->conn->query($sql3);
                 }
             }
 

@@ -15,16 +15,16 @@ if(isset($_POST["paypalpayment"])){
 
       session_start();
 
-      $userid = $_POST['userid'];
-      $addressez = test_input($_POST['addressez']);
-      $cityez = test_input($_POST['cityez']);
-      $statesz = test_input($_POST['statesz']);
-      $zipez = test_input($_POST['zipez']);
-      $countryez = test_input($_POST['countryez']);
+    //   $userid = $_POST['userid'];
+    //   $addressez = test_input($_POST['addressez']);
+    //   $cityez = test_input($_POST['cityez']);
+    //   $statesz = test_input($_POST['statesz']);
+    //   $zipez = test_input($_POST['zipez']);
+    //   $countryez = test_input($_POST['countryez']);
 
       
-    // print_r($userid);
-     $obj1->deliveryAddress($userid,$addressez,$cityez,$statesz,$zipez,$countryez);
+    // // print_r($userid);
+    //  $obj1->deliveryAddress($userid,$addressez,$cityez,$statesz,$zipez,$countryez);
 
 
 // Above code is handling the passage of user address for delevery into the database
@@ -32,20 +32,24 @@ if(isset($_POST["paypalpayment"])){
     // 
     // code below sends data into the customerorder table
     $userid = $_POST['userid'];
+    $emailzs = $_POST['emailsz'];
     $ordertotal = $_POST['ordertotal'];
     $productid = $_POST['productid'];
     $productqty = $_POST['productqty'];
 
-    $obj1->insertCustOrder($userid,$ordertotal,$productid,$productqty);
+  //  echo $emailzs;
 
-    $_SESSION['transref'] = mt_rand();
-    $trxref = $_SESSION['transref'];
-    $ordertotal = $_POST['ordertotal'];
+    $obj1->insertCustOrder($userid,$ordertotal,$productid,$productqty, $_SESSION['orderid'],$emailzs);
 
-  //  print_r($ordertotal);
+  //   $_SESSION['transref'] = mt_rand();
+  //   $trxref = $_SESSION['transref'];
+  //   $ordertotal = $_POST['ordertotal'];
 
-    $obj1->insertPayment($trxref, $ordertotal, $_SESSION['orderid']);
+  // //  print_r($ordertotal);
 
+  //   $obj1->insertPayment($trxref, $ordertotal, $_SESSION['orderid']);
+
+  //   $ord = $_SESSION['orderid'];
 
     header("location:paypalpayment.php");
 

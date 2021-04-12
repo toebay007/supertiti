@@ -24,6 +24,7 @@
             <div class="col-md-10 offset-md-1 admdivs" style="color:black;" id="newProduct">
                 <form action="process.php" method="post" enctype="multipart/form-data" class="formFonts">
                     <h4 class="text-center">Create Product</h4>
+                    
                     <?php 
                         if(isset($_GET['success']) && ($_GET['success'] == 'succesfully_created')){
                             echo'<div class="alert alert-success alert-dismissible fade show">';
@@ -148,7 +149,7 @@
                         if(isset($_GET['delete']) && ($_GET['delete'] == 'success')){
                             echo'<div class="alert alert-success alert-dismissible fade show">';
                             echo'Product Deleted successfully';
-                            echo'<button type="button" class="close" data-dismiss="alert" aria-label="close">
+                            echo'<button type="button" class="close" data-bs-dismiss="alert" aria-label="close">
                                     <span aria-hidden="true">&times;</span></button>';
                             echo'</div>';
                         }

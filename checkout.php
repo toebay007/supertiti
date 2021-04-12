@@ -21,7 +21,7 @@ $use = $a->getUser($user);
                   </div>
                   <div class="form-group col-md-6">
                     <label for="email"><i class="fa fa-envelope"></i> Email</label>
-                    <input type="text" class="form-control" id="email" name="emailzs" value="<?php  echo $user['emailzs']; ?>" placeholder="<?php  echo $user['emailzs']; ?>" disabled>
+                    <input type="text" class="form-control" id="email" name="emailzsz" value="<?php  echo $user['emailzs']; ?>" placeholder="<?php  echo $user['emailzs']; ?>" disabled>
                   </div>
                 </div>
                 <?php  } }  ?>
@@ -107,6 +107,9 @@ $use = $a->getUser($user);
                             <input type="hidden" name="productqty[]" value="<?php echo $productUnit['quantity']; ?>">
                             <?php } ?>
                             <input type="hidden" name="userid" value="<?php echo $_SESSION['idzz']; ?>">
+                            <?php  if(empty($use)){}else{  foreach($use as $user) { ?>
+                            <input type="hidden" name="emailsz" value="<?php echo $user['emailzs']; ?>">
+                            <?php } } ?>
                             <input type="hidden" id="proTotal" name="ordertotal" value="<?php echo $total; ?>">
                             <!-- <div id="paypal-payment"> </div> -->
                             <button type="submit" name="paypalpayment" class="adminbtn">Proceed to Payment</button>
