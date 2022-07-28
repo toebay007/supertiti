@@ -1,0 +1,25 @@
+{
+  "name": "toebay007/php-wallet-devplacement",
+  "authors": [{
+      "name": "Onyeka Tobe",
+      "email": "onyekaotobe@gmail.com"
+    },
+    {
+      "name": "Segun Akanbi",
+      "email": "akanbisegun46@yahoo.com"
+    }
+  ],
+  "require": {
+    "php": "^7.3"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "scripts": {
+    "cs:check": "./vendor/bin/php-cs-fixer fix --verbose --ansi --show-progress=estimating --diff --dry-run --config .php_cs.php",
+    "cs:fix": "./vendor/bin/php-cs-fixer fix --verbose --ansi --show-progress=estimating --config .php_cs.php",
+    "test": "./vendor/bin/phpunit --verbose --colors=always"
+  }
+}
