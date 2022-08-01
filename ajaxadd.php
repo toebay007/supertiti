@@ -1,6 +1,6 @@
 <?php  
 
-    $conn = new mysqli('localhost','root','','supertiti');
+    $conn = new mysqli('eu-cdbr-west-03.cleardb.net','bf9d3feb887765','1c337c96','heroku_eddc65853faeb30');
     session_start();
     $action = $_REQUEST['action'];
     @$p_id = trim($_REQUEST['p_id']);
